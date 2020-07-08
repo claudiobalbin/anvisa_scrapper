@@ -11,8 +11,8 @@ from progress.bar import Bar
 
 options = Options()
 options.headless = True
-# dados = pd.read_csv('simpro.csv')
-dados = pd.read_csv('simpro_reganvisa_nao_localizados_202007061433.csv')
+dados = pd.read_csv('simpro.csv')
+# dados = pd.read_csv('simpro_reganvisa_nao_localizados_202007061433.csv')
 
 n_localizados = 0
 print('{} | Processamento iniciado para {} registros.'.format(strftime("%Y-%m-%d %H:%M:%S", gmtime()), len(dados)))
@@ -55,4 +55,4 @@ driver.quit()
 bar.finish()
 
 print('{} | Processamento concluído com {} registros localizados e {} não localizados.'.format(
-    strftime("%Y-%m-%d %H:%M:%S", gmtime()), len(resultado), n_localizados))
+    strftime("%Y-%m-%d %H:%M:%S", gmtime()), len(dados)-n_localizados, n_localizados))
